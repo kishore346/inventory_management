@@ -41,14 +41,15 @@ INSTALLED_APPS = [
     'inventory',
     'rest_framework_simplejwt',
 ]
-# Django REST Framework settings
+
+
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ),
 }
 
-# JWT Settings (Optional, if you want custom expiration times)
+
 from datetime import timedelta
 
 SIMPLE_JWT = {
@@ -152,7 +153,7 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# inventory_project/settings.py
+
 
 CACHES = {
     "default": {

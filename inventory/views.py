@@ -1,27 +1,23 @@
-from django.shortcuts import render
-
 from rest_framework import generics
 from rest_framework.permissions import IsAuthenticated
 from .models import Item
 from .serializers import ItemSerializer
-from django.http import JsonResponse
 from rest_framework_simplejwt.authentication import JWTAuthentication
 from django.core.cache import cache
 from rest_framework.response import Response
 
-# Create item
 class ItemCreateView(generics.CreateAPIView):
     queryset = Item.objects.all()
     serializer_class = ItemSerializer
     permission_classes = [IsAuthenticated]
     authentication_classes = [JWTAuthentication]
 
-# Retrieve, Update, Delete item
-class ItemDetailView(generics.RetrieveUpdateDestroyAPIView):
+class ItemListCreate(generics.ListCreateAPIView):
     queryset = Item.objects.all()
     serializer_class = ItemSerializer
     permission_classes = [IsAuthenticated]
     authentication_classes = [JWTAuthentication]
+
 
 
 class ItemDetailView(generics.RetrieveUpdateDestroyAPIView):
