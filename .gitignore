@@ -1,0 +1,14 @@
+# Ignore the virtual environment folder
+env/
+venv/  # Add this if you're using 'venv' as your virtual environment name
+
+# Python bytecode files and cache
+*.pyc
+__pycache__/
+
+# PyCharm project settings folder
+.idea/
+
+# OS-generated files (optional)
+.DS_Store  # For macOS
+Thumbs.db  # For Windows
